@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.op {
+    color: #f00;
+
+    &.equal {
+        background-color: #f00 !important;
+        color: #fff !important;
+
+        &:hover {
+            background-color: #ccc !important;
+            color: #333 !important;
+        }
+    }
+}
+
+#error {
+    width: 100%;
+    height: 50px;
+    background-color: #ff0000;
+    border-bottom: 1px solid #ccc;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+
+    &.active {
+        display: flex;
+    }
+}
+
+.calculator {
+    width: 400px;
+    margin: calc(100vh - 80vh) auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    #display {
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        font-size: 40px;
+        color: #333;
+    }
+
+    .keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px;
+
+        .btn {
+            width: 100%;
+            height: 80px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: #ccc;
+            }
+
+            &.op {
+                background-color: #ccc;
+                color: #333;
+
+                &:hover {
+                    background-color: #f00;
+                    color: #fff;
+                }
+
+                &.equal {
+                    background-color: #f00;
+                color: #fff;
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+}
